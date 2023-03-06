@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+  {% for n in news%}
+      <div class="alert-primary rounded border">
+          <h1> {{n.title}} </h1>
+          <h2> {{n.content}} </h2>
+          <h3> Опубликовано {{ n.created_date }}. Автор {{ n.user.name }}</h3>
+      </div>
+  {% endfor %}
+    {{message}}
+</form>
+{% endblock %}
